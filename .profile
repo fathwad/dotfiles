@@ -13,3 +13,5 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # Colorize ls
 alias ls='ls -G'
+
+source /usr/local/bin/virtualenvwrapper.sh

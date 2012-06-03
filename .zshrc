@@ -30,9 +30,20 @@ alias vim="mvim -v"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git django brew)
+plugins=(git mercurial django brew)
 
 source $ZSH/oh-my-zsh.sh
 
+source .localrc
+
+#source /usr/local/bin/virtualenvwrapper.sh
+
+#export PGDATA=/usr/local/var/postgres
+
 # Customize to your needs...
-export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+#export PATH=/usr/local/Cellar/ctags/5.8/bin:/Users/frank/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+
+#workon dev
+
+# Customize to your needs...
+#export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
