@@ -34,7 +34,7 @@ plugins=(git mercurial django brew)
 
 source $ZSH/oh-my-zsh.sh
 
-source .localrc
+source ~/.localrc
 
 #source /usr/local/bin/virtualenvwrapper.sh
 

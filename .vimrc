@@ -16,6 +16,8 @@ set noswapfile
 set nobackup
 set wildignore+=*.pyc,*.sqlite
 let NERDTreeIgnore = ['\.pyc$']
+let TE_Ctags_Path = '/usr/local/bin/ctags'
+let TE_Include_File_Pattern = '.*\.py$'
 let g:CommandTCancelMap = '<Esc>'
 
 " easy tags
