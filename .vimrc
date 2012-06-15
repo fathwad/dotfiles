@@ -38,7 +38,6 @@ map <Leader>. :bnext<CR>
 map <Leader>, :bprev<CR>
 map <Leader>> :sbnext<CR>
 map <Leader>< :sbprev<CR>
-map <Leader>a :Ack 
 
 " source ~/.vim/bundle/pep8/ftplugin/python_pep8.vim
 " source ~/.vim/bundle/python_box/ftplugin/python_box.vim
