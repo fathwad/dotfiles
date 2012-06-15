@@ -11,32 +11,52 @@ set expandtab
 set hlsearch
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2  
-set tags=./tags,tags,~/.vimtags
 set noswapfile
 set nobackup
 set wildignore+=*.pyc,*.sqlite
-let NERDTreeIgnore = ['\.pyc$']
-let g:CommandTCancelMap = '<Esc>'
-
-" easy tags
-let g:easytags_autorecurse = 1
-let g:easytags_updatetime_autodisable=0
-let g:easytags_on_cursorhold = 0
-map <Leader>u :syntax off<CR>:UpdateTags -R .<CR>:syntax on<CR>
-autocmd FileType python let b:easytags_auto_highlight = 0
-
-au BufRead,BufNewFile *.zsh-theme set filetype=sh
+filetype plugin on
+set ofu=syntaxcomplete#Complete
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-
-map <F2> :NERDTreeToggle<CR>
-map <Leader>] :tnext<CR>
-map <Leader>[ :tprevious<CR>
+map <Leader>ss :mksession! ~/.vimsessions/def_session.vim<CR>
+map <Leader>sl :so ~/.vimsessions/def_session.vim<CR>
 map <Leader>. :bnext<CR>
 map <Leader>, :bprev<CR>
 map <Leader>> :sbnext<CR>
 map <Leader>< :sbprev<CR>
-map <Leader>a :Ack 
 
-" source ~/.vim/bundle/pep8/ftplugin/python_pep8.vim
-" source ~/.vim/bundle/python_box/ftplugin/python_box.vim
+au BufRead,BufNewFile *.zsh-theme set filetype=sh
+
+" plugins
+
+" ack
+map <Leader>aq :Ack 
+
+" command-t
+let g:CommandTMaxHeight = 20
+if &term =~ "xterm" || &term =~ "screen"
+  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']   " up/down arrows
+  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+endif
+
+" nerdtree
+let NERDTreeIgnore = ['\.pyc$']
+map <F2> :TlistClose<CR>:NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " close nerdtree when its last
+
+" taglist
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Exit_OnlyWindow = 1   " close taglist when its last
+let Tlist_File_Fold_Auto_Close = 1
+map <F3> :NERDTreeClose<CR>:Tlist<CR>
+autocmd BufWritePost * :TlistUpdate
+
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['python'] }
+let g:syntastic_enable_highlighting = 0
+map <Leader>e :Errors<CR>
+map <F4> :SyntasticCheck<CR>
+
+" to checkout...
+" easytags, snipmate, snipemu
