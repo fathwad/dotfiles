@@ -33,6 +33,7 @@ au BufRead,BufNewFile *.zsh-theme set filetype=sh
 map <Leader>aq :Ack 
 
 " command-t
+map <Leader>T :CommandTFlush<CR>
 let g:CommandTMaxHeight = 20
 if &term =~ "xterm" || &term =~ "screen"
   let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
