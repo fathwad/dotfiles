@@ -24,6 +24,7 @@ map <Leader>. :bnext<CR>
 map <Leader>, :bprev<CR>
 map <Leader>> :sbnext<CR>
 map <Leader>< :sbprev<CR>
+map <Leader>/ :noh<CR>
 
 au BufRead,BufNewFile *.zsh-theme set filetype=sh
 
