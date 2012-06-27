@@ -18,13 +18,16 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-map <Leader>ss :mksession! ~/.vimsessions/def_session.vim<CR>
-map <Leader>sl :so ~/.vimsessions/def_session.vim<CR>
-map <Leader>. :bnext<CR>
-map <Leader>, :bprev<CR>
-map <Leader>> :sbnext<CR>
-map <Leader>< :sbprev<CR>
-map <Leader>/ :noh<CR>
+nnoremap <Leader>sl :so ~/.vimsessions/def_session.vim<CR>
+nnoremap <Leader>. :bnext<CR>
+nnoremap <Leader>, :bprev<CR>
+nnoremap <Leader>> :sbnext<CR>
+nnoremap <Leader>< :sbprev<CR>
+nnoremap <Leader>/ :noh<CR>
+nnoremap <Leader>n :tabnew<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <Leader>q :tabclose<CR>
 
 au BufRead,BufNewFile *.zsh-theme set filetype=sh
 
