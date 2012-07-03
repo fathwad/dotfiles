@@ -18,7 +18,15 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+
+" save to default session
+nnoremap <Leader>ss :mksession! ~/.vimsessions/def_session.vim<CR>
 nnoremap <Leader>sl :so ~/.vimsessions/def_session.vim<CR>
+
+" save to a named session
+nnoremap <Leader>sn :mksession ~/.vimsessions/
+nnoremap <Leader>so :so ~/.vimsessions/
+
 nnoremap <Leader>. :bnext<CR>
 nnoremap <Leader>, :bprev<CR>
 nnoremap <Leader>> :sbnext<CR>
