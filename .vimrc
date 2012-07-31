@@ -13,6 +13,7 @@ set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2  
 set noswapfile
 set nobackup
+set nowrap
 set wildignore+=*.pyc,*.sqlite
 filetype plugin on
 set ofu=syntaxcomplete#Complete
