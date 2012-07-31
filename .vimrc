@@ -14,6 +14,7 @@ set laststatus=2
 set noswapfile
 set nobackup
 set nowrap
+set cursorline
 set wildignore+=*.pyc,*.sqlite
 filetype plugin on
 set ofu=syntaxcomplete#Complete
