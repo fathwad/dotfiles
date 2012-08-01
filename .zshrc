@@ -47,3 +47,4 @@ source ~/.localrc
 
 # Customize to your needs...
 #export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+unsetopt correct_all
