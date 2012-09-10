@@ -51,8 +51,9 @@ map <Leader>T :CommandTFlush<CR>
 let g:CommandTMaxHeight = 20
 if &term =~ "xterm" || &term =~ "screen"
   let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']   " up/down arrows
+  let g:CommandTSelectNextMap = ['<C-n>', '<ESC>OB']   " up/down arrows
   let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+  let g:CommandTAcceptSelectionSplitMap = ['<C-j>']
 endif
 
 " nerdtree
