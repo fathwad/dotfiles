@@ -38,6 +38,8 @@ nnoremap <Leader>n :tabnew<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <Leader>q :tabclose<CR>
+nnoremap <Leader>B <C-w>_<C-w>\|
+nnoremap <Leader>E <C-w>=
 
 au BufRead,BufNewFile *.zsh-theme set filetype=sh
 
