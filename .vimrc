@@ -74,6 +74,10 @@ autocmd BufWritePost * :TlistUpdate
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['python'] }
 let g:syntastic_enable_highlighting = 0
+let g:syntastic_python_checker = 'flake8'
+" ignore spacing between definitions and line lengths too long, multi imports
+" on one line
+let g:syntastic_python_checker_args = '--ignore=E302,E501,E401'
 map <Leader>e :Errors<CR>
 map <F4> :SyntasticCheck<CR>
 
